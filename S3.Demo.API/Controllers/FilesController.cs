@@ -27,7 +27,7 @@ public class FilesController : ControllerBase
         };
         request.Metadata.Add("Content-Type", file.ContentType);
         await _s3Client.PutObjectAsync(request);
-        return Ok($"File {file.FileName} uploaded to S3 successfully!");
+        return Ok($"File {prefix}/{file.FileName} uploaded to S3 successfully!");
     }
 
     [HttpGet("get-all")]
@@ -41,8 +41,7 @@ public class FilesController : ControllerBase
             Prefix = prefix
         };
         var result = await _s3Client.ListObjectsV2Async(request);
-        var s3Objects = new List<S3ObjectDto>();
-        result.S3Objects.ForEach(s =>
+        var s3Objects = result.S3Objects.Select(s =>
         {
             var urlRequest = new GetPreSignedUrlRequest()
             {
@@ -50,12 +49,13 @@ public class FilesController : ControllerBase
                 Key = s.Key,
                 Expires = DateTime.UtcNow.AddMinutes(1)
             };
-            s3Objects.Add(new S3ObjectDto()
+            return new S3ObjectDto()
             {
                 Name = s.Key.ToString(),
                 PresignedUrl = _s3Client.GetPreSignedURL(urlRequest),
-            });
+            };
         });
+
         return Ok(s3Objects);
     }
 
