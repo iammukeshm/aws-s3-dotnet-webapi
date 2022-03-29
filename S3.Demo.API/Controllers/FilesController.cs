@@ -70,5 +70,14 @@ namespace S3.Demo.API.Controllers
             var s3Object = await _s3Client.GetObjectAsync(bucketName, key);
             return File(s3Object.ResponseStream, s3Object.Headers.ContentType);
         }
+
+        [HttpGet("delete")]
+        public async Task<IActionResult> DeleteFileAsync(string bucketName, string key)
+        {
+            var bucketExists = await _s3Client.DoesS3BucketExistAsync(bucketName);
+            if (!bucketExists) return NotFound($"Bucket {bucketName} does not exist");
+            await _s3Client.DeleteObjectAsync(bucketName, key);
+            return NoContent();
+        }
     }
 }
