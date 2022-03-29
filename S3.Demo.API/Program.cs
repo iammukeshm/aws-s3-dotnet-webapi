@@ -1,7 +1,4 @@
-using Amazon.Extensions.NETCore.Setup;
-using Amazon.Runtime;
 using Amazon.S3;
-using S3.Demo.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
