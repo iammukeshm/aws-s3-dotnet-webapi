@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S3.Demo.WebAPI", "S3.Demo.WebAPI.csproj", "{3A6DC13B-E1D1-47F8-A886-14F18858933F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S3.Demo.API", "S3.Demo.API\S3.Demo.API.csproj", "{3150B1A9-A6CD-4518-AF34-B2914A8DADF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3A6DC13B-E1D1-47F8-A886-14F18858933F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A6DC13B-E1D1-47F8-A886-14F18858933F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A6DC13B-E1D1-47F8-A886-14F18858933F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A6DC13B-E1D1-47F8-A886-14F18858933F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3150B1A9-A6CD-4518-AF34-B2914A8DADF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3150B1A9-A6CD-4518-AF34-B2914A8DADF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3150B1A9-A6CD-4518-AF34-B2914A8DADF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3150B1A9-A6CD-4518-AF34-B2914A8DADF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {70FB446E-8B7F-473B-B748-5243052C2BD7}
+		SolutionGuid = {4F677231-03FD-4E21-9CB5-5CC15B37FC39}
 	EndGlobalSection
 EndGlobal
